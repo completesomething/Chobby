@@ -165,7 +165,7 @@ skin.positive_button = {
 }
 
 skin.battle_default_button = { --Blue
-  TileImageBK = ":cl:tech_button_bk.png",
+  TileImageBK = ":cl:tech_button_bk_alt.png",
   TileImageFG = ":cl:tech_button_bright_small_fg.png",
   tiles = {20, 20, 20, 20}, --// tile widths: left,top,right,bottom
   padding = {10, 10, 10, 10},
