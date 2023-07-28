@@ -342,7 +342,7 @@ local function GetValueEntryBox(parent, name, position, currentValue)
 		align = "right",
 		height = 35,
 		caption = name .. ":",
-		objectOverrideFont = Configuration:GetFont(3),
+		objectOverrideFont = Configuration:GetFont(7),
 		parent = parent,
 	}
 
@@ -364,7 +364,7 @@ local function GetValueEntryBox(parent, name, position, currentValue)
 		y = position,
 		height = 35,
 		text = tostring(currentValue),
-		objectOverrideFont = Configuration:GetFont(3),
+		objectOverrideFont = Configuration:GetFont(7),
 		objectOverrideHintFont = Configuration:GetHintFont(3),
 		useIME = false,
 		parent = parent,
@@ -406,7 +406,7 @@ local function ShowWindowGeoConfig(name, modeNum, modeName, retreatPadding)
 		right = 15,
 		y = 15,
 		height = 35,
-		objectOverrideFont = Configuration:GetFont(3),
+		objectOverrideFont = Configuration:GetFont(7),
 		caption = i18n("set_window_position"),
 		parent = manualWindow,
 	}
@@ -518,7 +518,7 @@ local function ShowManualFullscreenEntryWindow(name)
 		right = 15,
 		y = 15,
 		height = 35,
-		objectOverrideFont = Configuration:GetFont(3),
+		objectOverrideFont = Configuration:GetFont(7),
 		caption = i18n("set_resolution"),
 		parent = manualWindow,
 	}
@@ -626,7 +626,7 @@ local function AddCheckboxSetting(offset, caption, key, default, clickFunc, tool
 		caption = caption,
 		checked = checked,
 		tooltip = tooltip,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		OnChange = {function (obj, newState)
 			Configuration:SetConfigValue(key, newState)
 			if clickFunc then
@@ -649,7 +649,7 @@ local function AddNumberSetting(offset, caption, desc, key, default, minVal, max
 		valign = "top",
 		align = "left",
 		caption = caption,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		tooltip = desc,
 	}
 
@@ -675,7 +675,7 @@ local function AddNumberSetting(offset, caption, desc, key, default, minVal, max
 		width = COMBO_WIDTH,
 		height = 30,
 		text = ToPercent(default*100),
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		objectOverrideHintFont = Configuration:GetHintFont(2),
 		useIME = false,
 		OnFocusUpdate = {
@@ -725,7 +725,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Language",
 	}
 	children[#children + 1] = ComboBox:New {
@@ -734,7 +734,7 @@ local function GetLobbyTabControls()
 		width = COMBO_WIDTH,
 		height = 30,
 		items = langNames,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		selected = selectedLang,
 		OnSelect = {
 			function (obj)
@@ -755,7 +755,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Split Panel Mode",
 	}
 	children[#children + 1] = ComboBox:New {
@@ -764,7 +764,7 @@ local function GetLobbyTabControls()
 		width = COMBO_WIDTH,
 		height = 30,
 		items = {"Autodetect", "Always Two", "Always One"},
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		selected = Configuration.panel_layout or 1,
 		OnSelect = {
 			function (obj)
@@ -787,7 +787,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Chat Font Size",
 	}
 	children[#children + 1] = Trackbar:New {
@@ -817,7 +817,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Menu Music Volume",
 	}
 	children[#children + 1] = Trackbar:New {
@@ -847,7 +847,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Notification Volume",
 	}
 	children[#children + 1] = Trackbar:New {
@@ -877,7 +877,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Background Brightness",
 	}
 	children[#children + 1] = Trackbar:New {
@@ -907,7 +907,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Game Overlay Opacity",
 	}
 	children[#children + 1] = Trackbar:New {
@@ -937,7 +937,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Coop Connection Delay",
 		tooltip = "Hosts with poor internet may require their clients to add a delay in order to connect.",
 	}
@@ -970,7 +970,7 @@ local function GetLobbyTabControls()
 		boxsize = 20,
 		caption = i18n("autoLogin"),
 		checked = Configuration.autoLogin or false,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		OnChange = {function (obj, newState)
 			freezeSettings = true
 			Configuration:SetConfigValue("autoLogin", newState)
@@ -1012,7 +1012,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Clear Channel History",
 	}
 	children[#children + 1] = Button:New {
@@ -1020,6 +1020,7 @@ local function GetLobbyTabControls()
 		y = offset,
 		width = COMBO_WIDTH,
 		height = 30,
+		classname = "negative_button",
 		caption = "Apply",
 		tooltip = "Clears chat history displayed in the lobby, does not affect the chat history files saved to your computer.",
 		objectOverrideFont = Configuration:GetFont(2),
@@ -1039,7 +1040,7 @@ local function GetLobbyTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Delete Path Cache",
 	}
 	children[#children + 1] = Button:New {
@@ -1047,6 +1048,7 @@ local function GetLobbyTabControls()
 		y = offset,
 		width = COMBO_WIDTH,
 		height = 30,
+		classname = "negative_button",
 		caption = "Apply",
 		tooltip = "Deletes path cache. May solve desync.",
 		objectOverrideFont = Configuration:GetFont(2),
@@ -1090,7 +1092,7 @@ local function GetVoidTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(3),
+		objectOverrideFont = Configuration:GetFont(7),
 		text = "Warning: These settings are experimental and not officially supported, proceed at your own risk.",
 	}
 	offset = offset + 65
@@ -1126,7 +1128,7 @@ local function GetVoidTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Disable Lobby",
 	}
 	children[#children + 1] = Button:New {
@@ -1134,6 +1136,7 @@ local function GetVoidTabControls()
 		y = offset,
 		width = COMBO_WIDTH,
 		height = 30,
+		classname = "negative_button",
 		caption = "Disable",
 		tooltip = "Disables the entire lobby and menu.",
 		objectOverrideFont = Configuration:GetFont(2),
@@ -1152,7 +1155,7 @@ local function GetVoidTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Server Address                                                                           (zero-k.info or test.zero-k.info for testing)",
 	}
 	children[#children + 1] = EditBox:New {
@@ -1161,7 +1164,7 @@ local function GetVoidTabControls()
 		width = COMBO_WIDTH,
 		height = 30,
 		text = Configuration.serverAddress,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		objectOverrideHintFont = Configuration:GetHintFont(2),
 		useIME = false,
 		OnFocusUpdate = {
@@ -1184,7 +1187,7 @@ local function GetVoidTabControls()
 		height = 40,
 		valign = "top",
 		align = "left",
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Server Port                                                                                  (8200 or 8202 for testing)",
 	}
 	children[#children + 1] = EditBox:New {
@@ -1193,7 +1196,7 @@ local function GetVoidTabControls()
 		width = COMBO_WIDTH,
 		height = 30,
 		text = tostring(Configuration.serverPort),
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		objectOverrideHintFont = Configuration:GetHintFont(2),
 		useIME = false,
 		OnFocusUpdate = {
@@ -1224,7 +1227,7 @@ local function GetVoidTabControls()
 		valign = "top",
 		align = "left",
 		parent = window,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Singleplayer",
 	}
 
@@ -1245,7 +1248,7 @@ local function GetVoidTabControls()
 		height = 30,
 		parent = window,
 		items = Configuration.gameConfigHumanNames,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		selected = singleplayerSelected,
 		OnSelect = {
 			function (obj)
@@ -1266,7 +1269,7 @@ local function GetVoidTabControls()
 		valign = "top",
 		align = "left",
 		parent = window,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Campaign",
 	}
 
@@ -1287,7 +1290,7 @@ local function GetVoidTabControls()
 		height = 30,
 		parent = window,
 		items = Configuration.campaignConfigHumanNames,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		selected = campaignSelected,
 		OnSelect = {
 			function (obj)
@@ -1324,7 +1327,7 @@ local function MakeRestartWarning(offset)
 		valign = "top",
 		align = "left",
 		parent = window,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Warning: Most changes do not affect battles in progress.",
 	}
 	
@@ -1343,7 +1346,7 @@ local function MakePresetsControl(settingPresets, offset)
 		valign = "top",
 		align = "left",
 		parent = window,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		caption = "Preset:",
 	}
 
@@ -1358,7 +1361,7 @@ local function MakePresetsControl(settingPresets, offset)
 			width = 75,
 			height = 30,
 			caption = caption,
-			objectOverrideFont = Configuration:GetFont(2),
+			objectOverrideFont = Configuration:GetFont(6),
 			customSettings = not settings,
 			OnClick = {
 				function (obj)
@@ -1450,7 +1453,7 @@ local function ProcessScreenSizeOption(data, offset)
 		valign = "top",
 		align = "left",
 		caption = data.humanName,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		tooltip = data.desc,
 	}
 
@@ -1470,7 +1473,7 @@ local function ProcessScreenSizeOption(data, offset)
 		width = COMBO_WIDTH,
 		height = 30,
 		items = items,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		selected = selectedOption,
 		OnSelect = {
 			function (obj)
@@ -1525,7 +1528,7 @@ local function ProcessSettingsOption(data, offset, defaults, customSettingsSwitc
 		valign = "top",
 		align = "left",
 		caption = data.humanName,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		tooltip = data.desc,
 	}
 
@@ -1550,7 +1553,7 @@ local function ProcessSettingsOption(data, offset, defaults, customSettingsSwitc
 		width = COMBO_WIDTH,
 		height = 30,
 		items = items,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		selected = defaultItem,
 		OnSelect = {
 			function (obj, num)
@@ -1584,7 +1587,7 @@ local function ProcessSettingsNumber(data, offset, defaults, customSettingsSwitc
 		valign = "top",
 		align = "left",
 		caption = data.humanName,
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		tooltip = data.desc,
 	}
 
@@ -1615,7 +1618,7 @@ local function ProcessSettingsNumber(data, offset, defaults, customSettingsSwitc
 		width = COMBO_WIDTH,
 		height = 30,
 		text = FormatFunc(Configuration.settingsMenuValues[data.name] or defaults[data.name]),
-		objectOverrideFont = Configuration:GetFont(2),
+		objectOverrideFont = Configuration:GetFont(6),
 		objectOverrideHintFont = Configuration:GetHintFont(2),
 		useIME = false,
 		OnFocusUpdate = {
